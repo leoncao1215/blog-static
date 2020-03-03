@@ -1,0 +1,29 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Léon&#39;s Blog</title>
+        <link>https://c-leon.top/posts/</link>
+        <description>Recent content in Posts on Léon&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <copyright>备案号: &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;苏ICP备19068370号&lt;/a&gt;</copyright>
+        <lastBuildDate>Tue, 03 Mar 2020 11:43:01 +0800</lastBuildDate>
+        <atom:link href="https://c-leon.top/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>My First Post</title>
+            <link>https://c-leon.top/posts/2020/03/my-first-post/</link>
+            <pubDate>Tue, 03 Mar 2020 11:43:01 +0800</pubDate>
+            
+            <guid>https://c-leon.top/posts/2020/03/my-first-post/</guid>
+            <description>This is title. Lorem ipsum dolor sit amet, nonumy partiendo vim at, no vel ocurreret vituperata, pri magna epicurei assentior ad. Nec dicam democritum te, evertitur consequat assueverit usu an, tollit graece tractatos nam ex. Decore dolorem mediocrem nam te, iisque vituperatoribus ex quo. Ei aperiam prompta numquam mei, an utroque denique pro, no eos nisl viderer commune.
+Ut mundi deleniti quaestio vel, ex mei atqui ceteros postulant. Sit in omnesque facilisi, vide iriure duo id.</description>
+            <content type="html"><![CDATA[<h2 id="this-is-title">This is title.</h2>
+<p>Lorem ipsum dolor sit amet, nonumy partiendo vim at, no vel ocurreret vituperata, pri magna epicurei assentior ad. Nec dicam democritum te, evertitur consequat assueverit usu an, tollit graece tractatos nam ex. Decore dolorem mediocrem nam te, iisque vituperatoribus ex quo. Ei aperiam prompta numquam mei, an utroque denique pro, no eos nisl viderer commune.</p>
+<p>Ut mundi deleniti quaestio vel, ex mei atqui ceteros postulant. Sit in omnesque facilisi, vide iriure duo id. Ridens semper ponderum pri in. No prompta voluptaria dissentias mei.</p>
+<p>Eam cu amet veritus adipisci. Per et saperet veritus explicari. Nec at stet saepe deterruisset. Vis omnium tincidunt sententiae at. Duo ut graece abhorreant. Mea purto putent eu, dissentiet comprehensam necessitatibus sed te.</p>
+<p>Prima scripserit te duo, ius modus dissentiet at. In vim ferri saperet delectus. Cu solet nonumes platonem per, sale minim ei mel. Ut sed aperiam maiestatis, in ferri vocent mea.</p>
+<p>Sit ut tota decore necessitatibus. Nam ex congue dolorum, soleat inimicus vim in, qui nobis aliquid eleifend ut. Nec ut novum perpetua deterruisset, quo legere fastidii te. Mea ea iriure torquatos consectetuer, ea nam epicuri mediocrem, lorem omnes sit at. Duo suavitate iudicabit ut, eam dicta volutpat pericula no. Ne est fabulas adversarium, ius ne discere noluisse.</p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>

@@ -25,13 +25,13 @@
     <loc>https://c-leon.top/fr/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://c-leon.top/en/"
+                hreflang="zh"
+                href="https://c-leon.top/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://c-leon.top/"
+                hreflang="en"
+                href="https://c-leon.top/en/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -44,13 +44,13 @@
     <loc>https://c-leon.top/fr/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://c-leon.top/en/tags/"
+                hreflang="zh"
+                href="https://c-leon.top/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://c-leon.top/tags/"
+                hreflang="en"
+                href="https://c-leon.top/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
