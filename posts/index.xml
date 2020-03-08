@@ -5,8 +5,84 @@
         <description>Recent content in Posts on Léon 的个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <copyright>备案号: &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;苏ICP备19068370号&lt;/a&gt;</copyright>
-        <lastBuildDate>Sat, 07 Mar 2020 20:21:34 +0800</lastBuildDate>
+        <lastBuildDate>Sun, 08 Mar 2020 10:45:49 +0800</lastBuildDate>
         <atom:link href="https://c-leon.top/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>GitLab With Docker</title>
+            <link>https://c-leon.top/posts/2020/03/gitlab-with-docker/</link>
+            <pubDate>Sun, 08 Mar 2020 10:45:49 +0800</pubDate>
+            
+            <guid>https://c-leon.top/posts/2020/03/gitlab-with-docker/</guid>
+            <description>Install Docker Uninstall old versions sudo yum remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-engine Set up the repository Install requirements
+sudo yum install -y yum-utils \  device-mapper-persistent-data \  lvm2 Set up stable repository
+sudo yum-config-manager \  --add-repo \  https://download.docker.com/linux/centos/docker-ce.repo Install docker engine sudo yum install docker-ce docker-ce-cli containerd.io Start Docker sudo systemctl start docker GitLab image Pull image sudo docker pull gitlab/gitlab-ce Run GitLab sudo docker run --detach \  --hostname gitlab.</description>
+            <content type="html"><![CDATA[<h2 id="install-docker">Install Docker</h2>
+<h4 id="uninstall-old-versions">Uninstall old versions</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum remove docker <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-client <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-client-latest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-common <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-latest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-latest-logrotate <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-logrotate <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>                  docker-engine
+</code></pre></div><h4 id="set-up-the-repository">Set up the repository</h4>
+<p>Install requirements</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install -y yum-utils <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  device-mapper-persistent-data <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  lvm2
+</code></pre></div><p>Set up <strong>stable</strong> repository</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum-config-manager <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --add-repo <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    https://download.docker.com/linux/centos/docker-ce.repo
+</code></pre></div><h4 id="install-docker-engine">Install docker engine</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install docker-ce docker-ce-cli containerd.io
+</code></pre></div><h4 id="start-docker">Start Docker</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl start docker
+</code></pre></div><h2 id="gitlab-image">GitLab image</h2>
+<h4 id="pull-image">Pull image</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker pull gitlab/gitlab-ce
+</code></pre></div><h4 id="run-gitlab">Run GitLab</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run --detach <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --hostname gitlab.example.com <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --publish 8443:443 --publish 8080:80 --publish 8022:22 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --name gitlab <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --restart always <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --volume /srv/gitlab/config:/etc/gitlab <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --volume /srv/gitlab/logs:/var/log/gitlab <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --volume /srv/gitlab/data:/var/opt/gitlab <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  gitlab/gitlab-ce:latest
+</code></pre></div><h2 id="reverse-proxy">Reverse Proxy</h2>
+<h4 id="install-nginx">Install Nginx</h4>
+<p>Add Nginx repository</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install epel-release
+</code></pre></div><p>Install nginx</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install nginx
+</code></pre></div><p>Start nginx</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl start nginx
+</code></pre></div><h4 id="etcnginxconfdgitlabconf">/etc/nginx/conf.d/gitlab.conf</h4>
+<pre><code>server {
+	listen 80;
+	server_name gitlab.example.com;
+
+	location / {
+		proxy_set_header HOST $host;
+		proxy_set_header X-Forwarded-Proto $scheme;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_pass http://127.0.0.1:8080/;
+	}
+}
+</code></pre><p>Open port</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-service<span style="color:#f92672">=</span>http 
+sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-service<span style="color:#f92672">=</span>https
+sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>80/tcp
+sudo firewall-cmd --reload
+</code></pre></div><h2 id="more">More&hellip;</h2>
+<p><a href="https://juejin.im/post/5cc1df885188252d6c43fd91">掘金 - 使用Docker搭建GitLab</a></p>
+]]></content>
+        </item>
         
         <item>
             <title>Nginx配置简介</title>

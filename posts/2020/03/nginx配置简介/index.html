@@ -7,7 +7,7 @@
 <meta name="author" content="leoncao ">
 <meta name="description" content="常用配置 静态资源 在部署前端项目时，经常会将项目build成静态的html &amp;amp; JavaScript &amp;amp; css等文件，此时可用nginx进行web服务的配置。
 server { listen	3000;	# 该配置监听的端口 	server_name localhost; # 请求的域名 	root /usr/share/nginx/zf_frontend/dist; # 资源根目录  location / { try_files $uri @fallback; } location @fallback { rewrite .* /index.html break; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } }  server_name：若是同一端口端口有多个配置，会优先选择server_name一致的。如：端口80下同时有域名为 api.example.com 和www.example.com两个配置，那么如果有请求http://api.example.com/resources就会被解析到前一个配置中。 try_file：依次匹配后面的路径是否存在，例子中会将所有的本地没有静态文件的请求转给@fallback。 rewrite：重写请求的路径，服务器接收到的将是rewrite之后的路径，例子中除静态资源外所有的请求将被转发给/index.html。  反向代理 server { listen	80; server_name api.example.com; location / { proxy_pass http://127." />
-<meta name="keywords" content=", nginx, depoly, server" />
+<meta name="keywords" content=", Nginx, depoly, server" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
 <link rel="canonical" href="https://c-leon.top/posts/2020/03/nginx%E9%85%8D%E7%BD%AE%E7%AE%80%E4%BB%8B/" />
@@ -50,7 +50,7 @@ server { listen	3000;	# 该配置监听的端口 	server_name localhost; # 请�
 
 
 
-<meta itemprop="keywords" content="nginx,depoly,server," /><meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="keywords" content="Nginx,depoly,server," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://c-leon.top/"/>
 
 <meta name="twitter:title" content="Nginx配置简介"/>
@@ -233,7 +233,7 @@ server { listen	3000;	# 该配置监听的端口 	server_name localhost; # 请�
 
         <div class="post-info">
                 <p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://c-leon.top/tags/nginx">nginx</a></span><span class="tag"><a href="https://c-leon.top/tags/depoly">depoly</a></span><span class="tag"><a href="https://c-leon.top/tags/server">server</a></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://c-leon.top/tags/nginx">Nginx</a></span><span class="tag"><a href="https://c-leon.top/tags/depoly">depoly</a></span><span class="tag"><a href="https://c-leon.top/tags/server">server</a></span>
                 </p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
@@ -249,6 +249,13 @@ server { listen	3000;	# 该配置监听的端口 	server_name localhost; # 请�
                 </div>
 
                 <div class="pagination__buttons">
+                    
+                        <span class="button previous">
+                            <a href="https://c-leon.top/posts/2020/03/gitlab-with-docker/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">GitLab With Docker</span>
+                            </a>
+                        </span>
                     
 
                     

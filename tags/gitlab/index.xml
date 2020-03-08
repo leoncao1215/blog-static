@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitLab on Léon 的个人博客</title>
+    <link>https://c-leon.top/tags/gitlab/</link>
+    <description>Recent content in GitLab on Léon 的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>备案号: &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;苏ICP备19068370号&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 08 Mar 2020 10:45:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://c-leon.top/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GitLab With Docker</title>
+      <link>https://c-leon.top/posts/2020/03/gitlab-with-docker/</link>
+      <pubDate>Sun, 08 Mar 2020 10:45:49 +0800</pubDate>
+      
+      <guid>https://c-leon.top/posts/2020/03/gitlab-with-docker/</guid>
+      <description>Install Docker Uninstall old versions sudo yum remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-engine Set up the repository Install requirements
+sudo yum install -y yum-utils \  device-mapper-persistent-data \  lvm2 Set up stable repository
+sudo yum-config-manager \  --add-repo \  https://download.docker.com/linux/centos/docker-ce.repo Install docker engine sudo yum install docker-ce docker-ce-cli containerd.io Start Docker sudo systemctl start docker GitLab image Pull image sudo docker pull gitlab/gitlab-ce Run GitLab sudo docker run --detach \  --hostname gitlab.</description>
+    </item>
+    
+  </channel>
+</rss>
