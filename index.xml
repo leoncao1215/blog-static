@@ -38,9 +38,7 @@ server { listen	3000;	# 该配置监听的端口 	server_name localhost; # 请�
       <pubDate>Tue, 03 Mar 2020 11:43:01 +0800</pubDate>
       
       <guid>https://c-leon.top/posts/2020/03/%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
-      <description>使用 Hugo 构建博客框架 首先通过 Homebrew 安装 Hugo。 brew install hugo 使用 Hugo 初始化博客。 hugo new site my-blog 添加主题，此处以 Hello Friend NG 主题为例。 cd my-blog git init git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng 修改配置文件 以themes/hello-friend-ng/exampleSite/config.toml为模板修改即可。
-创建新的文章。 hugo new posts/my-first-post.md 运行预览。 hugo server -D 生成静态文件 确保content/posts/下至少有一篇文章的draft属性为false，否则将导致 /posts路径为404。
-创建新的 git 模块方便部署。 git submodule add https://github.com/leoncao1215/blog-static.git public 生成静态文件 hugo 使用 Nginx 部署到服务器 在服务器上 clone 静态文件的项目。 cd /usr/share/nginx git clone https://github.com/leoncao1215/blog-static.git my-blog 配置 Nginx。 创建新的 nginx 模块化配置。</description>
+      <description>使用 Hugo 构建博客框架 首先通过 Homebrew 安装 Hugo。 brew install hugo 使用 Hugo 初始化博客。 hugo new site my-blog 添加主题，此处以 Hello Friend NG 主题为例。 cd my-blog git init git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng 修改配置文件 以t</description>
     </item>
     
   </channel>

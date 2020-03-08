@@ -6,9 +6,19 @@
     <description>Recent content in Categories on Léon 的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>备案号: &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;苏ICP备19068370号&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 03 Mar 2020 11:43:01 +0800</lastBuildDate>
     
 	<atom:link href="https://c-leon.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>None</title>
+      <link>https://c-leon.top/categories/none/</link>
+      <pubDate>Tue, 03 Mar 2020 11:43:01 +0800</pubDate>
+      
+      <guid>https://c-leon.top/categories/none/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
