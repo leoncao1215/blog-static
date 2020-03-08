@@ -1,15 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Léon&#39;s Blog</title>
+    <title>Tags on Léon 的个人博客</title>
     <link>https://c-leon.top/tags/</link>
-    <description>Recent content in Tags on Léon&#39;s Blog</description>
+    <description>Recent content in Tags on Léon 的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>备案号: &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;苏ICP备19068370号&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 03 Mar 2020 11:43:01 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2020 20:21:34 +0800</lastBuildDate>
     
 	<atom:link href="https://c-leon.top/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>depoly</title>
+      <link>https://c-leon.top/tags/depoly/</link>
+      <pubDate>Sat, 07 Mar 2020 20:21:34 +0800</pubDate>
+      
+      <guid>https://c-leon.top/tags/depoly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://c-leon.top/tags/nginx/</link>
+      <pubDate>Sat, 07 Mar 2020 20:21:34 +0800</pubDate>
+      
+      <guid>https://c-leon.top/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://c-leon.top/tags/server/</link>
+      <pubDate>Sat, 07 Mar 2020 20:21:34 +0800</pubDate>
+      
+      <guid>https://c-leon.top/tags/server/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>blog</title>
@@ -26,15 +53,6 @@
       <pubDate>Tue, 03 Mar 2020 11:43:01 +0800</pubDate>
       
       <guid>https://c-leon.top/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nginx</title>
-      <link>https://c-leon.top/tags/nginx/</link>
-      <pubDate>Tue, 03 Mar 2020 11:43:01 +0800</pubDate>
-      
-      <guid>https://c-leon.top/tags/nginx/</guid>
       <description></description>
     </item>
     

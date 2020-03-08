@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Léon 的个人博客</title>
-    <link>https://c-leon.top/</link>
-    <description>Recent content on Léon 的个人博客</description>
+    <title>depoly on Léon 的个人博客</title>
+    <link>https://c-leon.top/tags/depoly/</link>
+    <description>Recent content in depoly on Léon 的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>备案号: &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;苏ICP备19068370号&lt;/a&gt;</copyright>
     <lastBuildDate>Sat, 07 Mar 2020 20:21:34 +0800</lastBuildDate>
     
-	<atom:link href="https://c-leon.top/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://c-leon.top/tags/depoly/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,17 +19,6 @@
       <guid>https://c-leon.top/posts/2020/03/nginx%E9%85%8D%E7%BD%AE%E7%AE%80%E4%BB%8B/</guid>
       <description>常用配置 静态资源 在部署前端项目时，经常会将项目build成静态的html &amp;amp; JavaScript &amp;amp; css等文件，此时可用nginx进行web服务的配置。
 server { listen	3000;	# 该配置监听的端口 	server_name localhost; # 请求的域名 	root /usr/share/nginx/zf_frontend/dist; # 资源根目录  location / { try_files $uri @fallback; } location @fallback { rewrite .* /index.html break; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } }  server_name：若是同一端口端口有多个配置，会优先选择server_name一致的。如：端口80下同时有域名为 api.example.com 和www.example.com两个配置，那么如果有请求http://api.example.com/resources就会被解析到前一个配置中。 try_file：依次匹配后面的路径是否存在，例子中会将所有的本地没有静态文件的请求转给@fallback。 rewrite：重写请求的路径，服务器接收到的将是rewrite之后的路径，例子中除静态资源外所有的请求将被转发给/index.html。  反向代理 server { listen	80; server_name api.example.com; location / { proxy_pass http://127.</description>
-    </item>
-    
-    <item>
-      <title>构建自己的博客</title>
-      <link>https://c-leon.top/posts/2020/03/%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Tue, 03 Mar 2020 11:43:01 +0800</pubDate>
-      
-      <guid>https://c-leon.top/posts/2020/03/%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
-      <description>使用 Hugo 构建博客框架 首先通过 Homebrew 安装 Hugo。 brew install hugo 使用 Hugo 初始化博客。 hugo new site my-blog 添加主题，此处以 Hello Friend NG 主题为例。 cd my-blog git init git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng 修改配置文件 以themes/hello-friend-ng/exampleSite/config.toml为模板修改即可。
-创建新的文章。 hugo new posts/my-first-post.md 运行预览。 hugo server -D 生成静态文件 确保content/posts/下至少有一篇文章的draft属性为false，否则将导致 /posts路径为404。
-创建新的 git 模块方便部署。 git submodule add https://github.com/leoncao1215/blog-static.git public 生成静态文件 hugo 使用 Nginx 部署到服务器 在服务器上 clone 静态文件的项目。 cd /usr/share/nginx git clone https://github.com/leoncao1215/blog-static.git my-blog 配置 Nginx。 创建新的 nginx 模块化配置。</description>
     </item>
     
   </channel>
