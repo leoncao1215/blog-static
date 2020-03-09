@@ -6,10 +6,21 @@
     <description>Recent content on Léon 的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>备案号: &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;苏ICP备19068370号&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 08 Mar 2020 10:45:49 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 14:33:28 +0800</lastBuildDate>
     
 	<atom:link href="https://c-leon.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>微软面经</title>
+      <link>https://c-leon.top/posts/2020/03/%E5%BE%AE%E8%BD%AF%E9%9D%A2%E7%BB%8F/</link>
+      <pubDate>Mon, 09 Mar 2020 14:33:28 +0800</pubDate>
+      
+      <guid>https://c-leon.top/posts/2020/03/%E5%BE%AE%E8%BD%AF%E9%9D%A2%E7%BB%8F/</guid>
+      <description>一面 就只是做了一道算法题，漆狗屋问题。
+我采用的 dp 解决，详细如下：
+class Solution { public int read(int[] books, int m) { int n = books.length; // Book number.  // dp[i][j] 存的是第 i 个人读到第 j 本书时的最优解  int[][] dp = new int[m+1][n+1]; // Initialize row.  for (int i = 1; i &amp;lt;= n; ++i) { dp[1][i] = sum(books, 0, i); } // Initialize col.  for (int i = 1; i &amp;lt;= m; ++i) { dp[i][1] = books[0]; } for (int i = 2; i &amp;lt;= m; ++i) { for (int j = 2; j &amp;lt;= n; ++j) { int min = Integer.</description>
+    </item>
     
     <item>
       <title>GitLab With Docker</title>

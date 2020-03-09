@@ -5,8 +5,99 @@
         <description>Recent content in Posts on Léon 的个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <copyright>备案号: &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;苏ICP备19068370号&lt;/a&gt;</copyright>
-        <lastBuildDate>Sun, 08 Mar 2020 10:45:49 +0800</lastBuildDate>
+        <lastBuildDate>Mon, 09 Mar 2020 14:33:28 +0800</lastBuildDate>
         <atom:link href="https://c-leon.top/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>微软面经</title>
+            <link>https://c-leon.top/posts/2020/03/%E5%BE%AE%E8%BD%AF%E9%9D%A2%E7%BB%8F/</link>
+            <pubDate>Mon, 09 Mar 2020 14:33:28 +0800</pubDate>
+            
+            <guid>https://c-leon.top/posts/2020/03/%E5%BE%AE%E8%BD%AF%E9%9D%A2%E7%BB%8F/</guid>
+            <description>一面 就只是做了一道算法题，漆狗屋问题。
+我采用的 dp 解决，详细如下：
+class Solution { public int read(int[] books, int m) { int n = books.length; // Book number.  // dp[i][j] 存的是第 i 个人读到第 j 本书时的最优解  int[][] dp = new int[m+1][n+1]; // Initialize row.  for (int i = 1; i &amp;lt;= n; ++i) { dp[1][i] = sum(books, 0, i); } // Initialize col.  for (int i = 1; i &amp;lt;= m; ++i) { dp[i][1] = books[0]; } for (int i = 2; i &amp;lt;= m; ++i) { for (int j = 2; j &amp;lt;= n; ++j) { int min = Integer.</description>
+            <content type="html"><![CDATA[<h2 id="heading">一面</h2>
+<p>就只是做了一道算法题，漆狗屋问题。</p>
+<p>我采用的 dp 解决，详细如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">read</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span> books<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> m<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> books<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> <span style="color:#75715e">// Book number.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// dp[i][j] 存的是第 i 个人读到第 j 本书时的最优解
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span> dp <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>m<span style="color:#f92672">+</span>1<span style="color:#f92672">]</span><span style="color:#f92672">[</span>n<span style="color:#f92672">+</span>1<span style="color:#f92672">]</span><span style="color:#f92672">;</span>
+
+    <span style="color:#75715e">// Initialize row.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n<span style="color:#f92672">;</span> <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      dp<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span><span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> sum<span style="color:#f92672">(</span>books<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> i<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// Initialize col.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m<span style="color:#f92672">;</span> <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      dp<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span><span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> books<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 2<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m<span style="color:#f92672">;</span> <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 2<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n<span style="color:#f92672">;</span> <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">int</span> min <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_VALUE</span><span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span> k <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> j<span style="color:#f92672">;</span> <span style="color:#f92672">+</span><span style="color:#f92672">+</span>k<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+          <span style="color:#75715e">// 这里后两项的比较一开始紧张 &amp; 手快还写错了，和面试官一起找问题花了一会儿
+</span><span style="color:#75715e"></span>          min <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>min<span style="color:#f92672">,</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>dp<span style="color:#f92672">[</span>i<span style="color:#f92672">-</span>1<span style="color:#f92672">]</span><span style="color:#f92672">[</span>k<span style="color:#f92672">]</span><span style="color:#f92672">,</span> sum<span style="color:#f92672">(</span>books<span style="color:#f92672">,</span> k<span style="color:#f92672">,</span> j<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        dp<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span><span style="color:#f92672">[</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> min<span style="color:#f92672">;</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">return</span> dp<span style="color:#f92672">[</span>m<span style="color:#f92672">]</span><span style="color:#f92672">[</span>n<span style="color:#f92672">]</span><span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span> books<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> start<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> end<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> start<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> end<span style="color:#f92672">;</span> <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> books<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">return</span> sum<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>面试完之后在网上还找到了另一个思路，大致是对从大小为 min(books) 到 max(books) 的桶来说，哪个大小的桶可以用最少的桶数去装下所有书，算法转载自 <a href="https://blog.csdn.net/qq_33935895/article/details/103128863">CSDN 博主「年糕糕糕」的原创文章</a>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 就按照顺序遍历数组累和,如果超过桶容量证明装不下了,桶数量+1,重新换一个新桶</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_required_painters</span>(arr, cap):
+    sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    numPainters <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> arr:
+        sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> x
+        <span style="color:#66d9ef">if</span> sum <span style="color:#f92672">&gt;</span> cap:
+            numPainters <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+            sum <span style="color:#f92672">=</span> x
+    <span style="color:#66d9ef">return</span> numPainters
+
+
+<span style="color:#75715e"># 二分查找</span>
+<span style="color:#75715e"># 对桶容量进行二分查找,获取当前桶容量对应的桶的个数,根据桶的个数决定查找方向  {key:桶容量,value:桶的个数}</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">search</span>(i, j, arr, k):
+    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> j:
+        <span style="color:#66d9ef">print</span>(i)
+        <span style="color:#66d9ef">return</span>
+    mid <span style="color:#f92672">=</span> (i <span style="color:#f92672">+</span> j) <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>
+    p_num <span style="color:#f92672">=</span> get_required_painters(arr, mid)  <span style="color:#75715e"># 以mid为容量的桶,需要多少个才能把数全装完</span>
+    <span style="color:#66d9ef">if</span> p_num <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> k:  <span style="color:#75715e"># 如果当前的桶的个数比要找的桶的数量小,说明当前桶数量过少,容量过大,因此就向左搜索,</span>
+        <span style="color:#75715e">#  等于也要搜索,因为在桶数量保持不变时,当前容量未必是最小容量</span>
+        search(i, mid, arr, k)
+    <span style="color:#66d9ef">else</span>:
+        search(mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, j, arr, k)
+
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#39;</span>:
+    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(int(input())):
+        k <span style="color:#f92672">=</span> list(map(int, input()<span style="color:#f92672">.</span>split(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>)))[<span style="color:#ae81ff">0</span>]
+        arr <span style="color:#f92672">=</span> list(map(int, input()<span style="color:#f92672">.</span>split(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>)))
+        min_cap <span style="color:#f92672">=</span> max(arr)  <span style="color:#75715e"># 40</span>
+        max_cap <span style="color:#f92672">=</span> sum(arr)  <span style="color:#75715e"># 100</span>
+        search(min_cap, max_cap, arr, k)
+</code></pre></div><h2 id="to-be-continued">TO BE CONTINUED</h2>
+]]></content>
+        </item>
         
         <item>
             <title>GitLab With Docker</title>
