@@ -14,12 +14,20 @@
             <pubDate>Mon, 09 Mar 2020 14:33:28 +0800</pubDate>
             
             <guid>https://c-leon.top/posts/2020/03/%E5%BE%AE%E8%BD%AF%E9%9D%A2%E7%BB%8F/</guid>
-            <description>一面 就只是做了一道算法题，漆狗屋问题。
-我采用的 dp 解决，详细如下：
-class Solution { public int read(int[] books, int m) { int n = books.length; // Book number.  // dp[i][j] 存的是第 i 个人读到第 j 本书时的最优解  int[][] dp = new int[m+1][n+1]; // Initialize row.  for (int i = 1; i &amp;lt;= n; ++i) { dp[1][i] = sum(books, 0, i); } // Initialize col.  for (int i = 1; i &amp;lt;= m; ++i) { dp[i][1] = books[0]; } for (int i = 2; i &amp;lt;= m; ++i) { for (int j = 2; j &amp;lt;= n; ++j) { int min = Integer.</description>
+            <description>一面 就只是做了一道算法题，漆狗屋问题，可在Geeksforgeeks上找到，原题描述如下：
+ Description Dilpreet wants to paint his dog- Buzo’s home that has n boards with different lengths[A1, A2,…, An]. He hired k painters for this work and each painter takes 1 unit time to paint 1 unit of the board.The problem is to find the minimum time to get this job done under the constraints that any painter will only paint continuous sections of boards, say board {2, 3, 4} or only board {1} or nothing but not board {2, 4, 5}.</description>
             <content type="html"><![CDATA[<h2 id="heading">一面</h2>
-<p>就只是做了一道算法题，漆狗屋问题。</p>
-<p>我采用的 dp 解决，详细如下：</p>
+<p>就只是做了一道算法题，漆狗屋问题，可在<a href="https://www.geeksforgeeks.org">Geeksforgeeks</a>上找到，原题描述如下：</p>
+<blockquote>
+<h5 id="description">Description</h5>
+<p>Dilpreet wants to paint his dog- Buzo’s home that has n boards with different lengths[A1, A2,…, An]. He hired k painters for this work and each painter takes 1 unit time to paint 1 unit of the board.The problem is to find the minimum time to get this job done under the constraints that any painter will only paint continuous sections of boards, say board {2, 3, 4} or only board {1} or nothing but not board {2, 4, 5}.</p>
+<p>Constraints:1&lt;=T&lt;=100,1&lt;=k&lt;=30,1&lt;=n&lt;=50,1&lt;=A[i]&lt;=500</p>
+<h5 id="input">Input</h5>
+<p>The first line consists of a single integer T, the number of test cases. For each test case, the first line contains an integer k denoting the number of painters and integer n denoting the number of boards. Next line contains n- space separated integers denoting the size of boards.</p>
+<h5 id="output">Output</h5>
+<p>For each test case, the output is an integer displaying the minimum time for painting that house.</p>
+</blockquote>
+<p>人话就是连续子串最大值最小问题。我采用的 dp 解决，详细如下：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">read</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[</span><span style="color:#f92672">]</span> books<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> m<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> books<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> <span style="color:#75715e">// Book number.
