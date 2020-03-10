@@ -45,7 +45,7 @@
  Description Dilpreet wants to paint his dog- Buzo’s home that has n boards with different lengths[A1, A2,…, An]. He hired k painters for this work and each painter takes 1 unit time to paint 1 unit of the board.The problem is to find the minimum time to get this job done under the constraints that any painter will only paint continuous sections of boards, say board {2, 3, 4} or only board {1} or nothing but not board {2, 4, 5}.">
 <meta itemprop="datePublished" content="2020-03-09T14:33:28&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-09T14:33:28&#43;08:00" />
-<meta itemprop="wordCount" content="424">
+<meta itemprop="wordCount" content="552">
 <meta itemprop="image" content="https://c-leon.top/"/>
 
 
@@ -224,7 +224,62 @@
         min_cap <span style="color:#f92672">=</span> max(arr)  <span style="color:#75715e"># 40</span>
         max_cap <span style="color:#f92672">=</span> sum(arr)  <span style="color:#75715e"># 100</span>
         search(min_cap, max_cap, arr, k)
-</code></pre></div><h2 id="to-be-continued">TO BE CONTINUED</h2>
+</code></pre></div><h2 id="heading-1">二面</h2>
+<p>（面试官小姐姐人挺好的）面试开始自我介绍，然后做一道题，做完一起讨论讨论怎么改进，以及会写什么样的测试用例。</p>
+<p>题目很简单，一个component，提供两个方法：</p>
+<ol>
+<li><code>record(int val) </code>：记录一次CPU占用率；</li>
+<li><code>average()</code>：读出过去五分钟内的CPU平均占用率，五分钟内没有数据返回<code>-1</code>。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Record</span> <span style="color:#f92672">{</span>
+  Long time<span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">int</span> value<span style="color:#f92672">;</span>
+
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Record</span><span style="color:#f92672">(</span>Long time<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> value<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">time</span> <span style="color:#f92672">=</span> time<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> value<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+	<span style="color:#75715e">// 这里应该可以换成 Queue 提高效能
+</span><span style="color:#75715e"></span>  List<span style="color:#f92672">&lt;</span>Record<span style="color:#f92672">&gt;</span> records<span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Solution</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    records <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">record</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> val<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// Assume val validated.
+</span><span style="color:#75715e"></span>    Long curTime <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">/</span> 1000<span style="color:#f92672">;</span>
+    removeOutdated<span style="color:#f92672">(</span>curTime<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    records<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Record<span style="color:#f92672">(</span>curTime<span style="color:#f92672">,</span> val<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> val<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">average</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    Long curTime <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">/</span> 1000<span style="color:#f92672">;</span>
+    removeOutdated<span style="color:#f92672">(</span>curTime<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>records<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">return</span> sum <span style="color:#f92672">/</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">double</span><span style="color:#f92672">)</span>records<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">removeOutdated</span><span style="color:#f92672">(</span>Long curTime<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>records<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>curTime <span style="color:#f92672">-</span> records<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#f92672">&gt;</span> 300<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        sum <span style="color:#f92672">-</span><span style="color:#f92672">=</span> records<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        records<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span>0<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+      <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="to-be-continued">TO BE CONTINUED.</h2>
 
             </div>
         </article>
