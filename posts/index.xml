@@ -1,258 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Posts on Léon 的个人博客</title>
-        <link>https://c-leon.top/posts/</link>
-        <description>Recent content in Posts on Léon 的个人博客</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <copyright>备案号: &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;苏ICP备19068370号&lt;/a&gt;</copyright>
-        <lastBuildDate>Sun, 08 Mar 2020 10:45:49 +0800</lastBuildDate>
-        <atom:link href="https://c-leon.top/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>GitLab With Docker</title>
-            <link>https://c-leon.top/posts/2020/03/gitlab-with-docker/</link>
-            <pubDate>Sun, 08 Mar 2020 10:45:49 +0800</pubDate>
-            
-            <guid>https://c-leon.top/posts/2020/03/gitlab-with-docker/</guid>
-            <description>Install Docker Uninstall old versions sudo yum remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-engine Set up the repository Install requirements
-sudo yum install -y yum-utils \  device-mapper-persistent-data \  lvm2 Set up stable repository
-sudo yum-config-manager \  --add-repo \  https://download.docker.com/linux/centos/docker-ce.repo Install docker engine sudo yum install docker-ce docker-ce-cli containerd.io Start Docker sudo systemctl start docker GitLab image Pull image sudo docker pull gitlab/gitlab-ce Run GitLab sudo docker run --detach \  --hostname gitlab.</description>
-            <content type="html"><![CDATA[<h2 id="install-docker">Install Docker</h2>
-<h4 id="uninstall-old-versions">Uninstall old versions</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum remove docker <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>                  docker-client <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>                  docker-client-latest <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>                  docker-common <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>                  docker-latest <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>                  docker-latest-logrotate <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>                  docker-logrotate <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>                  docker-engine
-</code></pre></div><h4 id="set-up-the-repository">Set up the repository</h4>
-<p>Install requirements</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install -y yum-utils <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  device-mapper-persistent-data <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  lvm2
-</code></pre></div><p>Set up <strong>stable</strong> repository</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum-config-manager <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --add-repo <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    https://download.docker.com/linux/centos/docker-ce.repo
-</code></pre></div><h4 id="install-docker-engine">Install docker engine</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install docker-ce docker-ce-cli containerd.io
-</code></pre></div><h4 id="start-docker">Start Docker</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl start docker
-</code></pre></div><h2 id="gitlab-image">GitLab image</h2>
-<h4 id="pull-image">Pull image</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker pull gitlab/gitlab-ce
-</code></pre></div><h4 id="run-gitlab">Run GitLab</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run --detach <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --hostname gitlab.example.com <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --publish 8443:443 --publish 8080:80 --publish 8022:22 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --name gitlab <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --restart always <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --volume /srv/gitlab/config:/etc/gitlab <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --volume /srv/gitlab/logs:/var/log/gitlab <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --volume /srv/gitlab/data:/var/opt/gitlab <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  gitlab/gitlab-ce:latest
-</code></pre></div><h2 id="reverse-proxy">Reverse Proxy</h2>
-<h4 id="install-nginx">Install Nginx</h4>
-<p>Add Nginx repository</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install epel-release
-</code></pre></div><p>Install nginx</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install nginx
-</code></pre></div><p>Start nginx</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl start nginx
-</code></pre></div><h4 id="etcnginxconfdgitlabconf">/etc/nginx/conf.d/gitlab.conf</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
-	<span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
-	<span style="color:#f92672">server_name</span> <span style="color:#e6db74">gitlab.example.com</span>;
-
-	<span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-		<span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">HOST</span> $host;
-		<span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Proto</span> $scheme;
-		<span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
-		<span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
-		<span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://127.0.0.1:8080/</span>;
-	}
-}
-</code></pre></div><p>Open port</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-service<span style="color:#f92672">=</span>http 
-sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-service<span style="color:#f92672">=</span>https
-sudo firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>80/tcp
-sudo firewall-cmd --reload
-</code></pre></div><h2 id="more">More&hellip;</h2>
-<p><a href="https://juejin.im/post/5cc1df885188252d6c43fd91">掘金 - 使用Docker搭建GitLab</a></p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Nginx配置简介</title>
-            <link>https://c-leon.top/posts/2020/03/nginx%E9%85%8D%E7%BD%AE%E7%AE%80%E4%BB%8B/</link>
-            <pubDate>Sat, 07 Mar 2020 20:21:34 +0800</pubDate>
-            
-            <guid>https://c-leon.top/posts/2020/03/nginx%E9%85%8D%E7%BD%AE%E7%AE%80%E4%BB%8B/</guid>
-            <description>常用配置 静态资源 在部署前端项目时，经常会将项目build成静态的html &amp;amp; JavaScript &amp;amp; css等文件，此时可用nginx进行web服务的配置。
-server { listen	3000;	# 该配置监听的端口 	server_name localhost; # 请求的域名 	root /usr/share/nginx/zf_frontend/dist; # 资源根目录  location / { try_files $uri @fallback; } location @fallback { rewrite .* /index.html break; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } }  server_name：若是同一端口端口有多个配置，会优先选择server_name一致的。如：端口80下同时有域名为 api.example.com 和www.example.com两个配置，那么如果有请求http://api.example.com/resources就会被解析到前一个配置中。 try_file：依次匹配后面的路径是否存在，例子中会将所有的本地没有静态文件的请求转给@fallback。 rewrite：重写请求的路径，服务器接收到的将是rewrite之后的路径，例子中除静态资源外所有的请求将被转发给/index.html。  反向代理 server { listen	80; server_name api.example.com; location / { proxy_pass http://127.</description>
-            <content type="html"><![CDATA[<h2 id="heading">常用配置</h2>
-<h4 id="heading-1">静态资源</h4>
-<p>在部署前端项目时，经常会将项目build成静态的html &amp; JavaScript &amp; css等文件，此时可用nginx进行web服务的配置。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
-	<span style="color:#f92672">listen</span>			 <span style="color:#ae81ff">3000</span>;			<span style="color:#75715e"># 该配置监听的端口
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">server_name</span>  <span style="color:#e6db74">localhost</span>; <span style="color:#75715e"># 请求的域名
-</span><span style="color:#75715e"></span>	<span style="color:#f92672">root</span> <span style="color:#e6db74">/usr/share/nginx/zf_frontend/dist</span>; <span style="color:#75715e"># 资源根目录
-</span><span style="color:#75715e"></span>
-	<span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-	  <span style="color:#f92672">try_files</span> $uri <span style="color:#e6db74">@fallback</span>;
-	}
-
-	<span style="color:#f92672">location</span> <span style="color:#e6db74">@fallback</span> {
-	  <span style="color:#f92672">rewrite</span> <span style="color:#e6db74">.*</span> <span style="color:#e6db74">/index.html</span> <span style="color:#e6db74">break</span>;
-	}
-
-	<span style="color:#f92672">error_page</span>   <span style="color:#ae81ff">500</span> <span style="color:#ae81ff">502</span> <span style="color:#ae81ff">503</span> <span style="color:#ae81ff">504</span>  <span style="color:#e6db74">/50x.html</span>;
-	<span style="color:#f92672">location</span> = <span style="color:#e6db74">/50x.html</span> {
-    <span style="color:#f92672">root</span>   <span style="color:#e6db74">html</span>;
-  }
-}
-</code></pre></div><ul>
-<li><code>server_name</code>：若是同一端口端口有多个配置，会优先选择server_name一致的。如：端口80下同时有域名为 <code>api.example.com </code>和<code>www.example.com</code>两个配置，那么如果有请求<code>http://api.example.com/resources</code>就会被解析到前一个配置中。</li>
-<li><code>try_file</code>：依次匹配后面的路径是否存在，例子中会将所有的本地没有静态文件的请求转给<code>@fallback</code>。</li>
-<li><code>rewrite</code>：重写请求的路径，服务器接收到的将是rewrite之后的路径，例子中除静态资源外所有的请求将被转发给<code>/index.html</code>。</li>
-</ul>
-<h4 id="heading-2">反向代理</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
-	<span style="color:#f92672">listen</span>			 <span style="color:#ae81ff">80</span>;
-	<span style="color:#f92672">server_name</span>  <span style="color:#e6db74">api.example.com</span>;
-
-	<span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-	  <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://127.0.0.1:8080</span>;
-	}
-}
-
-<span style="color:#66d9ef">server</span> {
-  <span style="color:#f92672">listen</span>			 <span style="color:#ae81ff">80</span>;
-  <span style="color:#f92672">server_name</span>	 <span style="color:#e6db74">www.example.com</span>;
-  
-  <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-    <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://127.0.0.1:3000</span>;
-  }
-}
-</code></pre></div><h4 id="heading-3">负载均衡</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">upstream</span> <span style="color:#e6db74">zf_frontend</span>{
-  <span style="color:#f92672">server</span> 127.0.0.1:<span style="color:#ae81ff">3000</span> 		 <span style="color:#e6db74">weight=5</span>;
-  <span style="color:#f92672">server</span> <span style="color:#e6db74">backup1.example.com</span> <span style="color:#e6db74">weight=2</span>;
-  <span style="color:#f92672">server</span> <span style="color:#e6db74">backup2.example.com</span> <span style="color:#e6db74">max_fails=3</span>;
-  <span style="color:#f92672">server</span> <span style="color:#e6db74">backup3.example.com</span> <span style="color:#e6db74">fail_timeout=10s</span> <span style="color:#e6db74">slow_start=30s</span>;
-  <span style="color:#f92672">server</span> <span style="color:#e6db74">backup4.example.com</span> <span style="color:#e6db74">down</span>;
-
-  <span style="color:#f92672">server</span> <span style="color:#e6db74">backup5.example.com</span> <span style="color:#e6db74">backup</span>;
-  <span style="color:#f92672">server</span> <span style="color:#e6db74">backup6.example.com</span> <span style="color:#e6db74">backup</span>;
-}
-
-<span style="color:#66d9ef">server</span> {
-	<span style="color:#f92672">listen</span>			 <span style="color:#ae81ff">80</span>;
-	<span style="color:#f92672">server_name</span>  <span style="color:#e6db74">localhost</span>;
-
-	<span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-	  <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">https://zf_frontend</span>;
-    <span style="color:#f92672">health_check</span>;
-	}
-}
-</code></pre></div><h4 id="heading-4">动态缓存</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">proxy_cache_path</span> <span style="color:#e6db74">/data/nginx/cache</span> <span style="color:#e6db74">levels=1:2</span> <span style="color:#e6db74">keys_zone=cache_zone:10m</span> <span style="color:#e6db74">max_size=10g</span> <span style="color:#e6db74">inactive=60m</span> <span style="color:#e6db74">use_temp_path=off</span>;
-
-<span style="color:#66d9ef">map</span> $request_method $purge_method {
-    <span style="color:#f92672">PURGE</span>   <span style="color:#ae81ff">1</span>;
-    <span style="color:#f92672">default</span> <span style="color:#ae81ff">0</span>;
-}
-
-<span style="color:#66d9ef">upstream</span> <span style="color:#e6db74">backend</span> {
-  <span style="color:#f92672">...</span>
-<span style="color:#960050;background-color:#1e0010">}</span>
-
-<span style="color:#e6db74">server</span> {
-    <span style="color:#f92672">...</span>
-    <span style="color:#e6db74">location</span> <span style="color:#e6db74">/</span> {
-        <span style="color:#f92672">proxy_pass</span> 					<span style="color:#e6db74">http://backend</span>;
-        <span style="color:#f92672">proxy_cache</span> 				<span style="color:#e6db74">cache_zone</span>;
-        <span style="color:#f92672">proxy_cache_key</span> 		$uri;
-        <span style="color:#f92672">proxy_cache_purge</span> 	$purge_method;
-        <span style="color:#75715e"># 当分配的服务器出现50X 错误时分配另一台服务器
-</span><span style="color:#75715e"></span>        <span style="color:#f92672">proxy_next_upstream</span>	<span style="color:#e6db74">error</span> <span style="color:#e6db74">timeout</span> <span style="color:#e6db74">invalid_header</span> <span style="color:#e6db74">http_500</span> <span style="color:#e6db74">http_502</span> <span style="color:#e6db74">http_503</span> <span style="color:#e6db74">http_504</span>
-    <span style="color:#960050;background-color:#1e0010">}</span>
-<span style="color:#960050;background-color:#1e0010">}</span>
-</code></pre></div>]]></content>
-        </item>
-        
-        <item>
-            <title>构建自己的博客</title>
-            <link>https://c-leon.top/posts/2020/03/%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
-            <pubDate>Tue, 03 Mar 2020 11:43:01 +0800</pubDate>
-            
-            <guid>https://c-leon.top/posts/2020/03/%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
-            <description>使用 Hugo 构建博客框架 首先通过 Homebrew 安装 Hugo。 brew install hugo 使用 Hugo 初始化博客。 hugo new site my-blog 添加主题，此处以 Hello Friend NG 主题为例。 cd my-blog git init git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng 修改配置文件 以t</description>
-            <content type="html"><![CDATA[<h2 id="-hugo-">使用 Hugo 构建博客框架</h2>
-<h4 id="-homebrew--hugo">首先通过 Homebrew 安装 Hugo。</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install hugo
-</code></pre></div><h4 id="-hugo--1">使用 Hugo 初始化博客。</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new site my-blog
-</code></pre></div><h4 id="-hello-friend-ng-">添加主题，此处以 Hello Friend NG 主题为例。</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd my-blog
-git init
-git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng
-</code></pre></div><h4 id="heading">修改配置文件</h4>
-<p>以<code>themes/hello-friend-ng/exampleSite/config.toml</code>为模板修改即可。</p>
-<h4 id="heading-1">创建新的文章。</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new posts/my-first-post.md
-</code></pre></div><h4 id="heading-2">运行预览。</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server -D
-</code></pre></div><h2 id="heading-3">生成静态文件</h2>
-<p>确保<code>content/posts/</code>下至少有一篇文章的<code>draft</code>属性为false，否则将导致 <code>/posts</code>路径为<code>404</code>。</p>
-<h4 id="-git-">创建新的 git 模块方便部署。</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add https://github.com/leoncao1215/blog-static.git public
-</code></pre></div><h4 id="heading-4">生成静态文件</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo
-</code></pre></div><h2 id="-nginx-">使用 Nginx 部署到服务器</h2>
-<h4 id="-clone-">在服务器上 clone 静态文件的项目。</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /usr/share/nginx
-git clone https://github.com/leoncao1215/blog-static.git my-blog
-</code></pre></div><h4 id="-nginx">配置 Nginx。</h4>
-<p>创建新的 nginx 模块化配置。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /etc/nginx/conf.d
-vim blog.conf
-</code></pre></div><p>在 blog.conf 中添加如下配置。若不用 HTTPS，将 443 端口的配置信息除 ssl 相关配置外全部放 80 端口的配置下即可。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
-	<span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span>;
-	<span style="color:#f92672">server_name</span> <span style="color:#e6db74">c-leon.top</span> <span style="color:#e6db74">www.c-leon.top</span>;
-	<span style="color:#f92672">access_log</span> <span style="color:#e6db74">/var/log/nginx/blog.log</span>;
-	<span style="color:#f92672">root</span> <span style="color:#e6db74">/usr/share/nginx/my-blog/</span>;
-
-	<span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">cert/3237001_c-leon.top.pem</span>;
-        <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">cert/3237001_c-leon.top.key</span>;
-        <span style="color:#f92672">ssl_session_cache</span> <span style="color:#e6db74">shared:SSL:1m</span>;
-        <span style="color:#f92672">ssl_session_timeout</span>  <span style="color:#ae81ff">10m</span>;
-        <span style="color:#f92672">ssl_ciphers</span> <span style="color:#e6db74">ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4</span>;
-	<span style="color:#f92672">ssl_protocols</span> <span style="color:#e6db74">TLSv1</span> <span style="color:#e6db74">TLSv1.1</span> <span style="color:#e6db74">TLSv1.2</span>;
-        <span style="color:#f92672">ssl_prefer_server_ciphers</span> <span style="color:#66d9ef">on</span>;
-
-        <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-        }
-
-        <span style="color:#f92672">error_page</span> <span style="color:#ae81ff">404</span> <span style="color:#e6db74">/404.html</span>;
-            <span style="color:#f92672">location</span> = <span style="color:#e6db74">/40x.html</span> {
-        }
-
-        <span style="color:#f92672">error_page</span> <span style="color:#ae81ff">500</span> <span style="color:#ae81ff">502</span> <span style="color:#ae81ff">503</span> <span style="color:#ae81ff">504</span> <span style="color:#e6db74">/50x.html</span>;
-            <span style="color:#f92672">location</span> = <span style="color:#e6db74">/50x.html</span> {
-        }
-}
-<span style="color:#66d9ef">server</span> {
-	<span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
-	<span style="color:#f92672">server_name</span> <span style="color:#e6db74">c-leon.top</span> <span style="color:#e6db74">www.c-leon.top</span>;
-	<span style="color:#f92672">return</span> <span style="color:#ae81ff">301</span> <span style="color:#e6db74">https://c-leon.top</span>$request_uri;
-}
-
-</code></pre></div>]]></content>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Posts on Léon 的个人博客</title>
+    <link>https://c-leon.top/posts/</link>
+    <description>Recent content in Posts on Léon 的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 08 Mar 2020 10:45:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://c-leon.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GitLab With Docker</title>
+      <link>https://c-leon.top/posts/gitlab-with-docker/</link>
+      <pubDate>Sun, 08 Mar 2020 10:45:49 +0800</pubDate>
+      
+      <guid>https://c-leon.top/posts/gitlab-with-docker/</guid>
+      <description>Install Docker Uninstall old versions sudo yum remove docker \  docker-client \  docker-client-latest \  docker-common \  docker-latest \  docker-latest-logrotate \  docker-logrotate \  docker-engine Set up the repository Install requirements</description>
+    </item>
+    
+    <item>
+      <title>Nginx配置简介</title>
+      <link>https://c-leon.top/posts/nginx%E9%85%8D%E7%BD%AE%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Sat, 07 Mar 2020 20:21:34 +0800</pubDate>
+      
+      <guid>https://c-leon.top/posts/nginx%E9%85%8D%E7%BD%AE%E7%AE%80%E4%BB%8B/</guid>
+      <description>常用配置 静态资源 在部署前端项目时，经常会将项目build成静态的html &amp;amp; JavaScript &amp;amp; css等文件，此时可用nginx进行web服务的配置。
+server { listen	3000;	# 该配置监听的端口 	server_name localhost; # 请求的域名 	root /usr/share/nginx/zf_frontend/dist; # 资源根目录  location / { try_files $uri @fallback; } location @fallback { rewrite .</description>
+    </item>
+    
+    <item>
+      <title>构建自己的博客</title>
+      <link>https://c-leon.top/posts/build-my-own-blog/</link>
+      <pubDate>Tue, 03 Mar 2020 11:43:01 +0800</pubDate>
+      
+      <guid>https://c-leon.top/posts/build-my-own-blog/</guid>
+      <description>使用 Hugo 构建博客框架 首先通过 Homebrew 安装 Hugo。 brew install hugo 使用 Hugo 初始化博客。 hugo new site my-blog 添加主题，此处以 Hello Friend NG 主题为例。 cd my-blog git init git submodule add https://github.</description>
+    </item>
+    
+  </channel>
 </rss>

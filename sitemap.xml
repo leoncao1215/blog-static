@@ -1,21 +1,80 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	
-	<sitemap>
-	   	<loc>https://c-leon.top/en/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://c-leon.top/zh/sitemap.xml</loc>
-		
-	   	<lastmod>2020-03-08T10:45:49+08:00</lastmod>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://c-leon.top/fr/sitemap.xml</loc>
-		
-	</sitemap>
-	
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://c-leon.top/tags/docker/</loc>
+    <lastmod>2020-03-08T10:45:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/tags/gitlab/</loc>
+    <lastmod>2020-03-08T10:45:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/posts/gitlab-with-docker/</loc>
+    <lastmod>2020-03-08T10:45:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/</loc>
+    <lastmod>2020-03-08T10:45:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/posts/</loc>
+    <lastmod>2020-03-08T10:45:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/tags/</loc>
+    <lastmod>2020-03-08T10:45:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/tags/depoly/</loc>
+    <lastmod>2020-03-07T20:21:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/tags/nginx/</loc>
+    <lastmod>2020-03-07T20:21:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/posts/nginx%E9%85%8D%E7%BD%AE%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2020-03-07T20:21:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/tags/server/</loc>
+    <lastmod>2020-03-07T20:21:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/tags/blog/</loc>
+    <lastmod>2020-03-03T11:43:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/tags/hugo/</loc>
+    <lastmod>2020-03-03T11:43:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/about/</loc>
+    <lastmod>2020-03-03T11:43:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/posts/build-my-own-blog/</loc>
+    <lastmod>2020-03-03T11:43:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://c-leon.top/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>

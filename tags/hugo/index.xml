@@ -5,7 +5,7 @@
     <link>https://c-leon.top/tags/hugo/</link>
     <description>Recent content in Hugo on Léon 的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>备案号: &lt;a href=&#34;http://www.beian.miit.gov.cn&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;苏ICP备19068370号&lt;/a&gt;</copyright>
+    <language>zh-cn</language>
     <lastBuildDate>Tue, 03 Mar 2020 11:43:01 +0800</lastBuildDate>
     
 	<atom:link href="https://c-leon.top/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
@@ -13,11 +13,11 @@
     
     <item>
       <title>构建自己的博客</title>
-      <link>https://c-leon.top/posts/2020/03/%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://c-leon.top/posts/build-my-own-blog/</link>
       <pubDate>Tue, 03 Mar 2020 11:43:01 +0800</pubDate>
       
-      <guid>https://c-leon.top/posts/2020/03/%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
-      <description>使用 Hugo 构建博客框架 首先通过 Homebrew 安装 Hugo。 brew install hugo 使用 Hugo 初始化博客。 hugo new site my-blog 添加主题，此处以 Hello Friend NG 主题为例。 cd my-blog git init git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng 修改配置文件 以t</description>
+      <guid>https://c-leon.top/posts/build-my-own-blog/</guid>
+      <description>使用 Hugo 构建博客框架 首先通过 Homebrew 安装 Hugo。 brew install hugo 使用 Hugo 初始化博客。 hugo new site my-blog 添加主题，此处以 Hello Friend NG 主题为例。 cd my-blog git init git submodule add https://github.</description>
     </item>
     
   </channel>
